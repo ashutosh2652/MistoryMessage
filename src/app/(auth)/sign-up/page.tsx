@@ -52,6 +52,8 @@ export default function SignUpForm() {
 					);
 					setUsernameMessage(response.data.message);
 				} catch (error) {
+					console.error("Error while checking username", error);
+
 					const axiosError = error as AxiosError<ApiResponse>;
 					setUsernameMessage(
 						axiosError.response?.data.message ??
